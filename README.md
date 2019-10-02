@@ -1,2 +1,2 @@
-# BasicBlogApp
-Basic Blog App
+# BasicBlogWebsite
+Basic Blog Website
