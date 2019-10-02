@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BlogMvcApp.Models.BlogModel>
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-warning">
+        <span class="glyphicon glyphicon-info-sign"></span> Kayıt Bulunamadı.
+    </div>
+}
+else
+{
+    foreach (var blog in Model)
+    {
+        <div class="blog">
+            <h3 class="page-header">@blog.Baslik</h3>
+            <p>
+                <span class="glyphicon glyphicon-time"></span>
+                @blog.EklenmeTarihi
+            </p>
+            <hr />
+            <img class="img-responsive" src="http://placehold.it/900x300" alt="" />
+            <hr />
+            <p>
+                @blog.Aciklama
+            </p>
+            @Html.ActionLink("Daha Fazla...", "Details", "Blog", new { id = blog.Id }, new { @class = "btn btn-primary" })
+        </div>
+    }
+}
